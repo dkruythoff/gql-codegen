@@ -1,5 +1,6 @@
 import React from 'react'
 import { useQuery, gql } from '@apollo/client';
+import { Book } from './types';
 
 const BOOKS = gql`
   {
@@ -18,7 +19,7 @@ function Books() {
 
   return (
     <ul>
-      {data.books.map((book: any, bookIndex: number) => (
+      {data.books.map((book: Book, bookIndex: number) => (
         <li key={`book-${bookIndex}`}>
           Title: {book.title}<br/>
           Author: {book.author}
